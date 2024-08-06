@@ -1,0 +1,16 @@
+.hero {
+  background-image: url('/../baner.jpg');
+  background-color: rgba(0, 0, 0, .7);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-blend-mode: color;
+  min-height: 80vh;
+}
+
+.icon-container {
+  padding: 10px;
+  border-radius: 5px;
+  height: 100%;
+  width: 40px;
+}
