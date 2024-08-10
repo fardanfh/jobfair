@@ -1,16 +1,113 @@
 .hero {
-  background-image: url('/../baner.jpg');
-  background-color: rgba(0, 0, 0, .7);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-blend-mode: color;
-  min-height: 80vh;
+    background-image: url("/../baner.jpg");
+    background-color: rgba(0, 0, 0, 0.7);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-blend-mode: color;
+    min-height: 80vh;
 }
 
 .icon-container {
-  padding: 10px;
-  border-radius: 5px;
-  height: 100%;
-  width: 40px;
+    padding: 10px;
+    border-radius: 5px;
+    height: 100%;
+    width: 40px;
 }
+/*Start button modal */
+/* Adjust modal content for better appearance */
+.modal-content {
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* Centering the modal title */
+.modal-title {
+    text-align: center;
+    width: 100%;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Google button styling */
+.btn-google {
+    background-color: #f5f5f5;
+    border: none;
+    border-radius: 5px;
+    color: #555;
+    font-weight: bold;
+    padding: 10px;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.btn-google img {
+    height: 20px;
+}
+
+.btn-google:hover {
+    background-color: #e2e2e2;
+}
+
+/* Divider styling */
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+    color: #aaa;
+}
+
+.divider:before,
+.divider:after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #ddd;
+    margin: 0 10px;
+}
+
+/* Button styles */
+.btn-primary {
+    background-color: #6c63ff;
+    border: none;
+    width: 100%;
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #574bff;
+}
+
+/* Link styling */
+.text-primary {
+    color: #6c63ff !important;
+    font-weight: bold;
+}
+
+/* Form control styles */
+.form-control {
+    border-radius: 5px;
+}
+
+/* Checkbox styling */
+.form-check-label {
+    margin-bottom: 0;
+}
+
+/* Navbar shadow */
+.navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Sticky top for navbar */
+.sticky-top {
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+}
+/*End button modal */
