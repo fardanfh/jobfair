@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::controller(LoginController::class)->group(function () {
+    Route::post('registersimpan', 'registerSimpan')->name('registersimpan'); // Ensure the route name matches the form's action
+    // Route::get('login', 'login')->name('login');
+    Route::post('login', 'loginAksi')->name('login.aksi');
+    Route::get('logout', 'logout')->middleware('auth')->name('logout');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('home', function () {
+        return view('home');
+    })->name('home');
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Route::get('/', function () {
+//     return view('home');
+// });
+
+// Route::get('/', function () {
+//     return view('home2');
+// });

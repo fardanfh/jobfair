@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('components.main')
 
 @section('content')
     <section class="hero d-flex justify-content-center align-items-center p-3">
@@ -253,7 +253,7 @@
                                     <path
                                         d="M0 4a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V6a2 2 0 0 1-2-2z" />
                                 </svg>
-                                10jt - 20jt
+                                Negosiasi
                             </span>
                             <span class="badge text-bg-secondary">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -272,7 +272,7 @@
                                         d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917z" />
                                     <path
                                         d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466z" />
-                                </svg>s
+                                </svg>
                                 SMA/SMK/S1
                             </span>
                         </div>
@@ -324,7 +324,7 @@
                                     <path
                                         d="M0 4a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V6a2 2 0 0 1-2-2z" />
                                 </svg>
-                                10jt - 20jt
+                                Negosiasi
                             </span>
                             <span class="badge text-bg-secondary">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -343,7 +343,7 @@
                                         d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917z" />
                                     <path
                                         d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466z" />
-                                </svg>s
+                                </svg>
                                 SMA/SMK/S1
                             </span>
                         </div>
@@ -395,7 +395,7 @@
                                     <path
                                         d="M0 4a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V6a2 2 0 0 1-2-2z" />
                                 </svg>
-                                10jt - 20jt
+                                Negosiasi
                             </span>
                             <span class="badge text-bg-secondary">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -414,7 +414,7 @@
                                         d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917z" />
                                     <path
                                         d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466z" />
-                                </svg>s
+                                </svg>
                                 SMA/SMK/S1
                             </span>
                         </div>
@@ -474,7 +474,7 @@
                         <hr class="mb-4 mt-0 d-inline-block mx-auto"
                             style="width: 60px; background-color: #7c4dff; height: 2px" />
                         <p>
-                            MK-TI Garuda Nusantara merupakan salah satu sekolah terbesar di Kota Cimahi. Menjuarai berbagai
+                            SMK-TI Garuda Nusantara merupakan salah satu sekolah terbesar di Kota Cimahi. Menjuarai berbagai
                             event baik tingkat Kota, Provinsi maupun Nasional. Setiap tahun menerima lebih dari 600 siswa
                             baru.
                             Dan telah meluluskan ribuan siswa sejak berdiri tahun 2009.
@@ -516,8 +516,8 @@
                         <p><i class="fas fa-home mr-3"></i> Jl. Sangkuriang No.30, Cipageran, Kec. Cimahi Utara, Kota
                             Cimahi, Jawa Barat 40511</p>
                         <p><i class="fas fa-envelope mr-3"></i> informasi@smktignc.sch.id</p>
-                        <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-                        <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+                        <p><i class="fas fa-phone mr-3"></i> +62 821 1900 6081</p>
+                        <p><i class="fas fa-print mr-3"></i> +62 877 2315 7313</p>
                     </div>
                 </div>
             </div>

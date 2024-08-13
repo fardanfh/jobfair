@@ -19,13 +19,13 @@
                     <a class="nav-link" href="#">Cari Lowongan</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Tips Loker</a>
+                    {{-- <a class="nav-link" href="#">Tips Loker</a> --}}
                 </li>
             </ul>
             <div class="d-flex">
                 <button class="btn btn-outline-success me-2" type="button" data-bs-toggle="modal"
                     data-bs-target="#loginModal">Login</button>
-                <button type="button" class="btn btn-primary " data-bs-toggle="modal"
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                     data-bs-target="#registerModal">Register</button>
             </div>
         </div>
@@ -52,12 +52,13 @@
 
                 <div class="divider">atau lanjutkan dengan</div>
 
-                <form action="##" method="POST">
+                <form action="{{ route('login.aksi') }}" method="POST">
                     @csrf
+
                     <div class="mb-3">
                         <label for="login-email" class="form-label">Email</label>
                         <input type="email" name="email" class="form-control" id="email"
-                            placeholder="mail@gmail.com" required>
+                            placeholder="email@gmail.com" required>
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
@@ -104,22 +105,30 @@
 
                 <div class="divider">atau lanjutkan dengan</div>
 
-                <form action="##" method="post">
+                <form action="{{ route('registersimpan') }}" method="post">
                     @csrf
+
                     <div class="mb-3">
-                        <label for="register-name" class="form-label">Name</label>
-                        <input type="text" name="name" class="form-control" id="register-name"
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" name="name" class="form-control" id="name"
                             placeholder="Full name" required>
                     </div>
                     <div class="mb-3">
-                        <label for="register-email" class="form-label">Email</label>
-                        <input type="email" name="email" class="form-control" id="register-email"
-                            placeholder="mail@gmail.com" required>
+                        <label for="email" class="form-label">Email</label>
+                        <input name="email" type="email" class="form-control" id="email"
+                            placeholder="email@gmail.com" required>
                     </div>
                     <div class="mb-3">
-                        <label for="register-password" class="form-label">Password</label>
-                        <input type="password" name="password" class="form-control" id="register-password"
+                        <label for="password" class="form-label">Password</label>
+                        <input name="password" type="password" class="form-control" id="password"
                             placeholder="Password" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="level" class="form-label">Level</label>
+                        <select name="level" class="form-select" id="level" required>
+                            <option value="perusahaan">Perusahaan</option>
+                            <option value="pelamar">Pelamar</option>
+                        </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Daftar</button>
                 </form>
@@ -132,3 +141,29 @@
         </div>
     </div>
 </div>
+
+<!-- SweetAlert Notifications -->
+@if (session('success'))
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Success',
+            text: '{{ session('success') }}',
+            showConfirmButton: false,
+            timer: 1500
+        });
+    </script>
+@endif
+
+@if (session('error'))
+    <script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: '{{ session('error') }}',
+            showConfirmButton: false,
+            timer: 1500
+        });
+    </script>
+@endif
