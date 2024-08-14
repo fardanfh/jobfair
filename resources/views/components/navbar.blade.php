@@ -126,8 +126,8 @@
                     <div class="mb-3">
                         <label for="level" class="form-label">Level</label>
                         <select name="level" class="form-select" id="level" required>
-                            <option value="perusahaan">Perusahaan</option>
-                            <option value="pelamar">Pelamar</option>
+                            <option value="perusahaan">perusahaan</option>
+                            <option value="pelamar">pelamar</option>
                         </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Daftar</button>

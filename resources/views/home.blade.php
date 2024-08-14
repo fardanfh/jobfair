@@ -743,6 +743,32 @@
         </div>
     </div>
 
+    <!-- SweetAlert Notifications -->
+    @if (session('success'))
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Success',
+                text: '{{ session('success') }}',
+                showConfirmButton: false,
+                timer: 1500
+            });
+        </script>
+    @endif
+
+    @if (session('error'))
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: '{{ session('error') }}',
+                showConfirmButton: false,
+                timer: 1500
+            });
+        </script>
+    @endif
+
     <!-- Bootstrap core JavaScript-->
     <script src="{{ asset('admin2/vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('admin2/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>

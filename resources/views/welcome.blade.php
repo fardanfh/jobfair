@@ -528,6 +528,31 @@
         </div>
     </footer>
 
+    <!-- SweetAlert Notifications -->
+    @if (session('success'))
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Success',
+                text: '{{ session('success') }}',
+                showConfirmButton: false,
+                timer: 1500
+            });
+        </script>
+    @endif
+
+    @if (session('email'))
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: '{{ session('error') }}',
+                showConfirmButton: false,
+                timer: 1500
+            });
+        </script>
+    @endif
 
     {{-- <a href="https://www.freepik.com/free-vector/hand-drawn-business-people-illustration_15635336.htm#fromView=keyword&page=1&position=2&uuid=d77d26ce-de52-4980-a589-d68e100f99d7">Image by pikisuperstar on Freepik</a> --}}
 

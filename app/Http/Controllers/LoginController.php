@@ -24,9 +24,10 @@ class LoginController extends Controller
             'name' => 'required',
             'email' => 'required|email',
             'password' => 'required|min:5',
-            'level' => 'required|in:perusahaan,pelamar',
+            'level' => 'required|in:perusahaan,pelamar'
         ])->validate();
 
+        // dd($validatedData["level"]);
         User::create([
             'name' => $validatedData['name'],
             'email' => $validatedData['email'],
@@ -45,20 +46,25 @@ class LoginController extends Controller
 
     public function loginAksi(Request $request)
     {
+        // Validate the incoming request
         $validatedData = $request->validate([
             'email' => 'required|email',
             'password' => 'required'
         ]);
 
-        if (!Auth::attempt($validatedData, $request->boolean('remember_token'))) {
+        // Attempt to authenticate with the given credentials
+        if (!Auth::attempt($validatedData, $request->boolean('remember'))) {
+            // Authentication failed, redirect back with an error message
             return redirect()->back()->withErrors([
                 'email' => 'The provided credentials do not match our records.'
             ])->withInput();
         }
 
+        // Authentication successful, regenerate the session
         $request->session()->regenerate();
 
-        return redirect()->route('home')->with('success', 'Login Berhasil.');
+        // Redirect to the homepage with a success message
+        return redirect('home')->with('success', 'Login Berhasil.');
     }
 
 
