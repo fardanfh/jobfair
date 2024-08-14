@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -31,10 +33,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/', function () {
-//     return view('home');
-// });
+Route::group(['middleware' => ['auth', 'ceklevel:superadmin,perusahaan']], function () {
+    route::get('/home', [HomeController::class, 'halamandashboard'])->name('home');
+});
 
-// Route::get('/', function () {
-//     return view('home2');
+// Route::group(['middleware' => ['auth','ceklevel:karyawan']], function () {
+//     route::post('/simpan-masuk',[PresensiController::class,'store'])->name('simpan-masuk');
+//     route::get('/presensi-masuk',[PresensiController::class,'index'])->name('presensi-masuk');
+//     route::get('/presensi-keluar',[PresensiController::class,'keluar'])->name('presensi-keluar');
+//     Route::post('ubah-presensi',[PresensiController::class,'presensipulang'])->name('ubah-presensi');
+//     Route::get('filter-data',[PresensiController::class,'halamanrekap'])->name('filter-data');
+//     Route::get('filter-data/{tglawal}/{tglakhir}',[PresensiController::class,'tampildatakeseluruhan'])->name('filter-data-keseluruhan');
 // });
