@@ -35,6 +35,7 @@ Route::get('/', function () {
 
 Route::group(['middleware' => ['auth', 'ceklevel:superadmin,perusahaan']], function () {
     route::get('/home', [HomeController::class, 'halamandashboard'])->name('home');
+    route::get('/pekerjaan', [HomeController::class, 'halamanPekerjaan'])->name('home');
 });
 
 // Route::group(['middleware' => ['auth','ceklevel:karyawan']], function () {

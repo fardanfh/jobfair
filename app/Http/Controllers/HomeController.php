@@ -8,6 +8,11 @@ class HomeController extends Controller
 {
     public function halamandashboard()
     {
-        return view('Home');
+        return view('dashboard.home');
+    }
+
+    public function halamanPekerjaan()
+    {
+        return view("dashboard.jobs");
     }
 }
