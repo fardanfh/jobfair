@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::controller(LoginController::class)->group(function () {
     Route::post('registersimpan', 'registerSimpan')->name('registersimpan'); // Ensure the route name matches the form's action
-    // Route::get('login', 'login')->name('login');
+    Route::get('login', 'login')->name('login');
     Route::post('login', 'loginAksi')->name('login.aksi');
     Route::get('logout', 'logout')->middleware('auth')->name('logout');
 });

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Skydash Admin</title>
+    <title>SMK TI GNC JOBFAIR</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{ asset('assets/vendors/feather/feather.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/vendors/ti-icons/css/themify-icons.css') }}">
@@ -22,29 +23,30 @@
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <!-- endinject -->
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}" />
-  </head>
-  <body>
+</head>
+
+<body>
     <div class="container-scroller">
 
-      <!-- Navbar -->
-      @include('components.navbarDashboard')
-      <!-- End Of Navbar -->
+        <!-- Navbar -->
+        @include('components.navbarDashboard')
+        <!-- End Of Navbar -->
 
-      <div class="container-fluid page-body-wrapper">
-        <!-- Sidebar -->
-        @include('components.sidebar')
-        <!-- End Of Sidebar -->
+        <div class="container-fluid page-body-wrapper">
+            <!-- Sidebar -->
+            @include('components.sidebar')
+            <!-- End Of Sidebar -->
 
-        <div class="main-panel">
-          <div class="content-wrapper">
-            @yield('content')
-          </div>
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    @yield('content')
+                </div>
 
-          {{-- Footer --}}
-          @include('components.footer')
-          {{-- End Of Footer --}}
+                {{-- Footer --}}
+                @include('components.footer')
+                {{-- End Of Footer --}}
+            </div>
         </div>
-      </div>
     </div>
     <script src="/assets/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
@@ -65,5 +67,6 @@
     <script src="/assets/js/jquery.cookie.js" type="text/javascript"></script>
     <script src="/assets/js/dashboard.js"></script>
     <!-- <script src="assets/js/Chart.roundedBarCharts.js"></script> -->
-  </body>
+</body>
+
 </html>
