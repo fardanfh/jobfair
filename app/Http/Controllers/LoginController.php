@@ -34,6 +34,7 @@ class LoginController extends Controller
             'email' => $validatedData['email'],
             'password' => Hash::make($validatedData['password']),
             'level' => $validatedData['level'],
+            'remember_token' => Str::random(60), // Tambahkan ini untuk menyimpan remember_token
         ]);
 
         return redirect('/')->with('success', 'Register berhasil silakan login.');
@@ -42,7 +43,7 @@ class LoginController extends Controller
 
     public function login()
     {
-        return view('components.navbar');
+        return view('welcome');
     }
 
     public function loginAksi(Request $request)

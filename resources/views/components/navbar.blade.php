@@ -90,7 +90,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header d-flex justify-content-center">
-                <h5 class="modal-title" id="registerModalLabel">Join Us Today!</h5>
+                <h5 class="modal-title" id="registerModalLabel">Silakan Daftar Sebagai!</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -126,8 +126,9 @@
                     <div class="mb-3">
                         <label for="level" class="form-label">Level</label>
                         <select name="level" class="form-select" id="level" required>
-                            <option value="perusahaan">perusahaan</option>
-                            <option value="pelamar">pelamar</option>
+                            <option value="" required>Silakan Pilih Level</option>
+                            <option value="perusahaan">Perusahaan</option>
+                            <option value="pelamar">Pelamar</option>
                         </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Daftar</button>
