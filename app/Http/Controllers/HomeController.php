@@ -15,4 +15,14 @@ class HomeController extends Controller
     {
         return view("dashboard.jobs");
     }
+
+    public function halamanProfile()
+    {
+        // return view("dashboard.profile");
+    }
+
+    public function halamancreatepekerjaan()
+    {
+        // return view("dashboard.create");
+    }
 }

@@ -36,13 +36,6 @@ Route::get('/', function () {
 Route::group(['middleware' => ['auth', 'ceklevel:superadmin,perusahaan']], function () {
     route::get('/home', [HomeController::class, 'halamandashboard'])->name('home');
     route::get('/pekerjaan', [HomeController::class, 'halamanPekerjaan'])->name('home');
+    // route::get('/profile', [HomeController::class, 'halamanProfile'])->name('home');
+    // route::get('/create', [HomeController::class, 'halamancreatepekerjaan'])->name('home');
 });
-
-// Route::group(['middleware' => ['auth','ceklevel:karyawan']], function () {
-//     route::post('/simpan-masuk',[PresensiController::class,'store'])->name('simpan-masuk');
-//     route::get('/presensi-masuk',[PresensiController::class,'index'])->name('presensi-masuk');
-//     route::get('/presensi-keluar',[PresensiController::class,'keluar'])->name('presensi-keluar');
-//     Route::post('ubah-presensi',[PresensiController::class,'presensipulang'])->name('ubah-presensi');
-//     Route::get('filter-data',[PresensiController::class,'halamanrekap'])->name('filter-data');
-//     Route::get('filter-data/{tglawal}/{tglakhir}',[PresensiController::class,'tampildatakeseluruhan'])->name('filter-data-keseluruhan');
-// });
