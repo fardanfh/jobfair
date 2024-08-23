@@ -1,8 +1,13 @@
 @extends('dashboard.layout')
 
 @section('content')
+<<<<<<< HEAD
     @if (auth()->user()->level == 'perusahaan' || auth()->user()->level == 'superadmin')
         <h3>Selamat Datang Di Dashboard {{ auth()->user()->level }}!</h3>
+=======
+    @if (auth()->user()->level == 'perusahaan')
+        <h3>Hello, {{ auth()->user()->name }}</h3>
+>>>>>>> 1c59bcf603a7b4348a0ab520e77179fd7e411321
         <p>Ini aktivitas dan karir terbaru anda!</p>
 
         <div class="row">
