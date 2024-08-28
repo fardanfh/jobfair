@@ -37,5 +37,5 @@ Route::group(['middleware' => ['auth', 'ceklevel:superadmin,perusahaan']], funct
     route::get('/home', [HomeController::class, 'halamandashboard'])->name('home');
     route::get('/pekerjaan', [HomeController::class, 'halamanPekerjaan'])->name('home');
     // route::get('/profile', [HomeController::class, 'halamanProfile'])->name('home');
-    // route::get('/create', [HomeController::class, 'halamancreatepekerjaan'])->name('home');
+    route::get('/create', [HomeController::class, 'jobposting'])->name('home');
 });

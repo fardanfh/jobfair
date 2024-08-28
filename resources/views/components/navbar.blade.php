@@ -123,10 +123,11 @@
                         <input name="password" type="password" class="form-control" id="password"
                             placeholder="Password" required>
                     </div>
-                    <div class="mb-3">
-                        <label for="level" class="form-label">Level</label>
-                        <select name="level" class="form-select" id="level" required>
-                            <option value="" required>Silakan Pilih Level</option>
+                    <div class="form-group">
+                        <label for="level" class="font-weight-bold">Level <span
+                                class="text-danger">*</span></label>
+                        <select name="level" class="form-control" id="level" required>
+                            <option value="" disabled selected>Silakan Pilih Level</option>
                             <option value="perusahaan">Perusahaan</option>
                             <option value="pelamar">Pelamar</option>
                         </select>

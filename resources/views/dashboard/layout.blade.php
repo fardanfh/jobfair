@@ -5,11 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<<<<<<< HEAD
     <title>SMK TI GNC</title>
-=======
-    <title>SMK TI GNC JOBFAIR</title>
->>>>>>> 1c59bcf603a7b4348a0ab520e77179fd7e411321
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{ asset('assets/vendors/feather/feather.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/vendors/ti-icons/css/themify-icons.css') }}">
@@ -46,31 +42,36 @@
                     @yield('content')
                 </div>
 
-                {{-- Footer --}}
-                @include('components.footer')
-                {{-- End Of Footer --}}
+                <div class="main">
+                    <div class="content-wrapper">
+                        @yield('createjob')
+                    </div>
+
+                    {{-- Footer --}}
+                    @include('components.footer')
+                    {{-- End Of Footer --}}
+                </div>
             </div>
         </div>
-    </div>
-    <script src="/assets/vendors/js/vendor.bundle.base.js"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page -->
-    <script src="/assets/vendors/chart.js/chart.umd.js"></script>
-    <script src="/assets/vendors/datatables.net/jquery.dataTables.js"></script>
-    <!-- <script src="assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script> -->
-    <script src="/assets/vendors/datatables.net-bs5/dataTables.bootstrap5.js"></script>
-    <script src="/assets/js/dataTables.select.min.js"></script>
-    <!-- End plugin js for this page -->
-    <!-- inject:js -->
-    <script src="/assets/js/off-canvas.js"></script>
-    <script src="/assets/js/template.js"></script>
-    <script src="/assets/js/settings.js"></script>
-    <script src="/assets/js/todolist.js"></script>
-    <!-- endinject -->
-    <!-- Custom js for this page-->
-    <script src="/assets/js/jquery.cookie.js" type="text/javascript"></script>
-    <script src="/assets/js/dashboard.js"></script>
-    <!-- <script src="assets/js/Chart.roundedBarCharts.js"></script> -->
+        <script src="/assets/vendors/js/vendor.bundle.base.js"></script>
+        <!-- endinject -->
+        <!-- Plugin js for this page -->
+        <script src="/assets/vendors/chart.js/chart.umd.js"></script>
+        <script src="/assets/vendors/datatables.net/jquery.dataTables.js"></script>
+        <!-- <script src="assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script> -->
+        <script src="/assets/vendors/datatables.net-bs5/dataTables.bootstrap5.js"></script>
+        <script src="/assets/js/dataTables.select.min.js"></script>
+        <!-- End plugin js for this page -->
+        <!-- inject:js -->
+        <script src="/assets/js/off-canvas.js"></script>
+        <script src="/assets/js/template.js"></script>
+        <script src="/assets/js/settings.js"></script>
+        <script src="/assets/js/todolist.js"></script>
+        <!-- endinject -->
+        <!-- Custom js for this page-->
+        <script src="/assets/js/jquery.cookie.js" type="text/javascript"></script>
+        <script src="/assets/js/dashboard.js"></script>
+        <!-- <script src="assets/js/Chart.roundedBarCharts.js"></script> -->
 </body>
 
 </html>

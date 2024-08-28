@@ -21,8 +21,8 @@ class HomeController extends Controller
         // return view("dashboard.profile");
     }
 
-    public function halamancreatepekerjaan()
+    public function jobposting()
     {
-        // return view("dashboard.create");
+        return view("dashboard.create");
     }
 }
