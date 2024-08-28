@@ -1,6 +1,29 @@
 @extends('components.main')
 
 @section('content')
+    <!-- SweetAlert Notifications -->
+    @if (session('success'))
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Success',
+                text: '{{ session('success') }}',
+                showConfirmButton: false,
+                timer: 1500
+            });
+        </script>
+    @endif
+    @if ($errors->has('email'))
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Login Failed',
+                text: '{{ $errors->first('email') }}',
+                confirmButtonText: 'Try Again'
+            });
+        </script>
+    @endif
     <section class="hero d-flex justify-content-center align-items-center p-3">
         <div class="card" style="width: 25rem">
             <div class="card-body">
@@ -526,28 +549,24 @@
         </div>
     </footer>
 
-    <!-- SweetAlert Notifications -->
-    @if (session('success'))
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    @if ($errors->has('register_error'))
         <script>
             Swal.fire({
-                icon: 'success',
-                title: 'Success',
-                text: '{{ session('success') }}',
-                showConfirmButton: false,
-                timer: 1500
+                icon: 'error',
+                title: 'Registration Failed',
+                text: '{{ $errors->first('register_error') }}',
+                confirmButtonText: 'Try Again'
             });
         </script>
     @endif
 
-    @if (session('email'))
+    @if (session('success'))
         <script>
             Swal.fire({
-                icon: 'error',
-                title: 'Error',
-                text: '{{ session('error') }}',
-                showConfirmButton: false,
-                timer: 1500
+                icon: 'success',
+                title: 'Registration Successful',
+                text: '{{ session('success') }}',
+                confirmButtonText: 'OK'
             });
         </script>
     @endif

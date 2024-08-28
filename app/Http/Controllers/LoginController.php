@@ -21,23 +21,30 @@ class LoginController extends Controller
     // Handle registration form submission
     public function registerSimpan(Request $request)
     {
-        $validatedData = Validator::make($request->all(), [
-            'name' => 'required',
-            'email' => 'required|email',
-            'password' => 'required|min:5',
-            'level' => 'required|in:perusahaan,pelamar'
-        ])->validate();
+        try {
+            $validatedData = Validator::make($request->all(), [
+                'name' => 'required',
+                'email' => 'required|email',
+                'password' => 'required|min:5',
+                'level' => 'required|in:perusahaan,pelamar'
+            ])->validate();
 
-        // dd($validatedData["level"]);
-        User::create([
-            'name' => $validatedData['name'],
-            'email' => $validatedData['email'],
-            'password' => Hash::make($validatedData['password']),
-            'level' => $validatedData['level'],
-            'remember_token' => Str::random(60), // Tambahkan ini untuk menyimpan remember_token
-        ]);
+            // Simpan data user baru
+            User::create([
+                'name' => $validatedData['name'],
+                'email' => $validatedData['email'],
+                'password' => Hash::make($validatedData['password']),
+                'level' => $validatedData['level'],
+                'remember_token' => Str::random(60),
+            ]);
 
-        return redirect('/')->with('success', 'Register berhasil silakan login.');
+            return redirect('/')->with('success', 'Register berhasil silakan login.');
+        } catch (\Exception $e) {
+            // Jika ada kesalahan, redirect kembali dengan pesan error
+            return redirect()->back()->withErrors([
+                'register_error' => 'Register gagal. Silakan coba lagi.'
+            ])->withInput();
+        }
     }
 
 
@@ -54,13 +61,30 @@ class LoginController extends Controller
             'password' => 'required'
         ]);
 
+        // Initialize or increment the failed login attempts counter
+        $failedAttempts = $request->session()->get('failed_attempts', 0);
+
         // Attempt to authenticate with the given credentials
         if (!Auth::attempt($validatedData, $request->boolean('remember'))) {
+            // Increment the failed login attempts counter
+            $failedAttempts++;
+            $request->session()->put('failed_attempts', $failedAttempts);
+
+            // Customize the error message based on the number of failed attempts
+            $errorMessage = 'The provided credentials do not match our records.';
+
+            if ($failedAttempts >= 3) {
+                $errorMessage = 'Login failed multiple times. Please check your credentials or try again later.';
+            }
+
             // Authentication failed, redirect back with an error message
             return redirect()->back()->withErrors([
-                'email' => 'The provided credentials do not match our records.'
+                'email' => $errorMessage
             ])->withInput();
         }
+
+        // Reset the failed login attempts counter on successful login
+        $request->session()->forget('failed_attempts');
 
         // Authentication successful, regenerate the session
         $request->session()->regenerate();

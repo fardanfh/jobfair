@@ -54,14 +54,15 @@
 
                 <form action="{{ route('login.aksi') }}" method="POST">
                     @csrf
-
                     <div class="mb-3">
-                        <label for="login-email" class="form-label">Email</label>
+                        <label for="login-email" class="form-label font-weight-bold">Email <span
+                                class="text-danger">*</span></label>
                         <input type="email" name="email" class="form-control" id="email"
                             placeholder="email@gmail.com" required>
                     </div>
                     <div class="mb-3">
-                        <label for="password" class="form-label">Password</label>
+                        <label for="password" class="form-label font-weight-bold">Password <span
+                                class="text-danger">*</span></label>
                         <input type="password" name="password" class="form-control" id="password"
                             placeholder="Password" required>
                     </div>
@@ -107,19 +108,21 @@
 
                 <form action="{{ route('registersimpan') }}" method="post">
                     @csrf
-
                     <div class="mb-3">
-                        <label for="name" class="form-label">Name</label>
+                        <label for="name" class="form-label font-weight-bold">Nama <span
+                                class="text-danger">*</span></label>
                         <input type="text" name="name" class="form-control" id="name"
-                            placeholder="Full name" required>
+                            placeholder="Full nama" required>
                     </div>
                     <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
+                        <label for="email" class="form-label font-weight-bold">Email <span
+                                class="text-danger">*</span></label>
                         <input name="email" type="email" class="form-control" id="email"
                             placeholder="email@gmail.com" required>
                     </div>
                     <div class="mb-3">
-                        <label for="password" class="form-label">Password</label>
+                        <label for="password" class="form-label font-weight-bold">Password <span
+                                class="text-danger">*</span></label>
                         <input name="password" type="password" class="form-control" id="password"
                             placeholder="Password" required>
                     </div>
