@@ -23,6 +23,12 @@
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <!-- endinject -->
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}" />
+    {{-- sweet alert2 --}}
+    <link rel="stylesheet" href="sweetalert2.min.css">
+    {{-- sweet alert2  --}}
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -45,6 +51,7 @@
                 <div class="main">
                     <div class="content-wrapper">
                         @yield('createjob')
+                        @yield('scripts')
                     </div>
 
                     {{-- Footer --}}
@@ -53,6 +60,10 @@
                 </div>
             </div>
         </div>
+        {{-- sweet alert2 CDN --}}
+        <script src="sweetalert2.all.min.js"></script>
+        <script src="sweetalert2.min.js"></script>
+        {{-- sweet alert2 CDN --}}
         <script src="/assets/vendors/js/vendor.bundle.base.js"></script>
         <!-- endinject -->
         <!-- Plugin js for this page -->

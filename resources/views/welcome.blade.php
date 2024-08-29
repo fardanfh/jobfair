@@ -1,29 +1,6 @@
 @extends('components.main')
 
 @section('content')
-    <!-- SweetAlert Notifications -->
-    @if (session('success'))
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <script>
-            Swal.fire({
-                icon: 'success',
-                title: 'Success',
-                text: '{{ session('success') }}',
-                showConfirmButton: false,
-                timer: 1500
-            });
-        </script>
-    @endif
-    @if ($errors->has('email'))
-        <script>
-            Swal.fire({
-                icon: 'error',
-                title: 'Login Failed',
-                text: '{{ $errors->first('email') }}',
-                confirmButtonText: 'Try Again'
-            });
-        </script>
-    @endif
     <section class="hero d-flex justify-content-center align-items-center p-3">
         <div class="card" style="width: 25rem">
             <div class="card-body">
@@ -239,7 +216,7 @@
     </section>
 
     <section class="container">
-        <h2 class="text-center mt-5">Lowongan Premium</h2>
+        <h2 class="text-center mt-5">Lowongan Kerja</h2>
 
         <div class="row mt-5">
             <div class="col-md-4 mb-3">
@@ -543,11 +520,40 @@
                 </div>
             </div>
         </section>
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-            © 2024 Copyright:
-            <a class="text-white" href="https://www.smktignc.sch.id/" target="_blank">SMK TI Cimahi</a>
+        <div class="text-center p-3 d-flex justify-content-between align-items-center"
+            style="background-color: rgba(0, 0, 0, 0.2)">
+            <span class="text-white text-sm-left">
+                Copyright © 2020-2024.
+                <a href="https://www.smktignc.sch.id/" target="_blank" style="color: #007bff;">SMK TI GNC</a>
+                All rights reserved.
+            </span>
+            <span class="text-white text-center">Beta Version 1</span>
         </div>
     </footer>
+
+    <!-- SweetAlert Notifications -->
+    @if (session('success'))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Success',
+                text: '{{ session('success') }}',
+                showConfirmButton: false,
+                timer: 1500
+            });
+        </script>
+    @endif
+
+    @if ($errors->has('email'))
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Login Failed',
+                text: '{{ $errors->first('email') }}',
+                confirmButtonText: 'Try Again'
+            });
+        </script>
+    @endif
 
     @if ($errors->has('register_error'))
         <script>
@@ -559,19 +565,4 @@
             });
         </script>
     @endif
-
-    @if (session('success'))
-        <script>
-            Swal.fire({
-                icon: 'success',
-                title: 'Registration Successful',
-                text: '{{ session('success') }}',
-                confirmButtonText: 'OK'
-            });
-        </script>
-    @endif
-
-    {{-- <a href="https://www.freepik.com/free-vector/hand-drawn-business-people-illustration_15635336.htm#fromView=keyword&page=1&position=2&uuid=d77d26ce-de52-4980-a589-d68e100f99d7">Image by pikisuperstar on Freepik</a> --}}
-
-    {{-- <a href="https://www.freepik.com/free-vector/organic-flat-people-business-training-illustration_13297951.htm#fromView=keyword&page=1&position=4&uuid=d77d26ce-de52-4980-a589-d68e100f99d7">Image by pikisuperstar on Freepik</a> --}}
 @endsection

@@ -4,7 +4,6 @@
     @if (auth()->user()->level == 'perusahaan' || auth()->user()->level == 'superadmin')
         <h3>Selamat Datang Di Dashboard {{ auth()->user()->level }}!</h3>
         <p>Ini aktivitas dan karir terbaru anda!</p>
-
         <div class="row">
             <div class="col-md-4">
                 <div class="card card-light-blue">
@@ -81,5 +80,28 @@
                 </div>
             </div>
         </section>
+    @endif
+    <!-- SweetAlert Notifications -->
+    @if (session('success'))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Success',
+                text: '{{ session('success') }}',
+                showConfirmButton: false,
+                timer: 1500
+            });
+        </script>
+    @endif
+
+    @if ($errors->has('email'))
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Login Failed',
+                text: '{{ $errors->first('email') }}',
+                confirmButtonText: 'Try Again'
+            });
+        </script>
     @endif
 @endsection
