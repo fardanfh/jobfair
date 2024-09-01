@@ -15,14 +15,14 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="#profile">
+            <a class="nav-link" href="/invit">
                 <i class="mdi mdi-account menu-icon"></i>
                 <span class="menu-title">Job Invitation</span>
             </a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="#profile">
+            <a class="nav-link" href="/appli">
                 <i class="mdi mdi-account menu-icon"></i>
                 <span class="menu-title">Job Applications</span>
             </a>

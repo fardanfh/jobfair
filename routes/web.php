@@ -38,4 +38,6 @@ Route::group(['middleware' => ['auth', 'ceklevel:superadmin,perusahaan']], funct
     route::get('/pekerjaan', [HomeController::class, 'halamanPekerjaan'])->name('home');
     // route::get('/profile', [HomeController::class, 'halamanProfile'])->name('home');
     route::get('/create', [HomeController::class, 'jobposting'])->name('home');
+    route::get('/appli', [HomeController::class, 'jobapplications'])->name('home');
+    route::get('/invit', [HomeController::class, 'jobinvitations'])->name('home');
 });

@@ -25,4 +25,14 @@ class HomeController extends Controller
     {
         return view("dashboard.create");
     }
+
+    public function jobapplications()
+    {
+        return view("dashboard.appli");
+    }
+
+    public function jobinvitations()
+    {
+        return view("dashboard.appli");
+    }
 }

@@ -2,7 +2,7 @@
 
 @section('content')
     @if (auth()->user()->level == 'perusahaan' || auth()->user()->level == 'superadmin')
-        <h3>Selamat Datang Di Dashboard {{ auth()->user()->level }}!</h3>
+        <h3>Selamat Datang Di Dashboard {{ auth()->user()->name }}!</h3>
         <p>Ini aktivitas dan karir terbaru anda!</p>
         <div class="row">
             <div class="col-md-4">

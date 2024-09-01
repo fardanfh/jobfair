@@ -48,6 +48,7 @@
                     @yield('content')
                 </div>
 
+
                 <div class="main">
                     <div class="content-wrapper">
                         @yield('createjob')
