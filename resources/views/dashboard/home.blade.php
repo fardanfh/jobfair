@@ -1,7 +1,7 @@
 @extends('dashboard.layout')
 
 @section('content')
-    @if (auth()->user()->level == 'perusahaan' || auth()->user()->level == 'superadmin')
+    @if (auth()->user()->level == 'admin')
         <h3>Selamat Datang Di Dashboard {{ auth()->user()->name }}!</h3>
         <p>Ini aktivitas dan karir terbaru anda!</p>
         <div class="row">

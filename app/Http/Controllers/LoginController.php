@@ -25,16 +25,19 @@ class LoginController extends Controller
             $validatedData = Validator::make($request->all(), [
                 'name' => 'required',
                 'email' => 'required|email',
-                'password' => 'required|min:5',
-                'level' => 'required|in:perusahaan,pelamar'
+                'password' => 'required|min:6',
+                // Tidak wajib memasukkan level
             ])->validate();
+
+            // Set level default sebagai "pelamar" jika tidak ada level yang diinput
+            $level = $validatedData['level'] ?? 'pelamar';
 
             // Simpan data user baru
             User::create([
                 'name' => $validatedData['name'],
                 'email' => $validatedData['email'],
                 'password' => Hash::make($validatedData['password']),
-                'level' => $validatedData['level'],
+                'level' => $level,
                 'remember_token' => Str::random(60),
             ]);
 

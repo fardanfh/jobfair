@@ -27,6 +27,9 @@
     <link rel="stylesheet" href="sweetalert2.min.css">
     {{-- sweet alert2  --}}
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    {{-- icon --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM+gJ8MJQbzC6Dzh9AI/GbMpDm17V5ZkA2ceD3F" crossorigin="anonymous">
     <!-- SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>

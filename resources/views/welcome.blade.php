@@ -2,27 +2,37 @@
 
 @section('content')
     <section class="hero d-flex justify-content-center align-items-center p-3">
-        <div class="card" style="width: 25rem">
+        <div class="card" style="width: 100%; max-width: 50rem;">
             <div class="card-body">
                 <h4 class="text-center text-muted">Cari Pekerjaan Mu</h4>
 
                 <form action="" class="mt-3">
-                    <div class="mb-3">
-                        <label for="jobtitle" class="form-label text-muted">Pekerjaan / Perushaan</label>
-                        <input type="text" class="form-control" id="jobtitle" placeholder="Posisi atau Perushaan">
+                    <div class="d-flex mb-3">
+                        <input type="text" class="form-control" id="jobtitle" placeholder="Masukkan kata kunci">
+                        <button class="btn btn-primary" type="button" style="width: 10%">Cari</button>
                     </div>
-                    <div class="mb-3">
+                    <div class="d-flex justify-content-between">
                         <select class="form-select" aria-label="Default select example">
                             <option selected>Semua Lokasi</option>
                             <option value="1">Kab Bandung</option>
                             <option value="2">Kota Bandung</option>
                         </select>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Semua Kategori</option>
+                            <option value="1">IT</option>
+                            <option value="2">Finance</option>
+                        </select>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Semua Pendidikan</option>
+                            <option value="1">SMA/SMK</option>
+                            <option value="2">D3/S1</option>
+                        </select>
                     </div>
-                    <button class="btn btn-primary" type="button">Cari</button>
                 </form>
             </div>
         </div>
     </section>
+
 
     <section class="container">
         <h2 class="text-center mt-5">Kategori Pekerjaan</h2>
@@ -279,13 +289,6 @@
 
                         <div class="mt-3 d-flex justify-content-between">
                             <a href="" class="btn btn-primary">Lihat Detail</a>
-                            <button class="btn btn-secondary">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                    fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd"
-                                        d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314" />
-                                </svg>
-                            </button>
                         </div>
                     </div>
                 </div>
@@ -350,13 +353,6 @@
 
                         <div class="mt-3 d-flex justify-content-between">
                             <a href="" class="btn btn-primary">Lihat Detail</a>
-                            <button class="btn btn-secondary">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                    fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd"
-                                        d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314" />
-                                </svg>
-                            </button>
                         </div>
                     </div>
                 </div>
@@ -421,13 +417,6 @@
 
                         <div class="mt-3 d-flex justify-content-between">
                             <a href="" class="btn btn-primary">Lihat Detail</a>
-                            <button class="btn btn-secondary">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                    fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd"
-                                        d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314" />
-                                </svg>
-                            </button>
                         </div>
                     </div>
                 </div>
@@ -469,53 +458,74 @@
         <section class="">
             <div class="container text-center text-md-start mt-5">
                 <div class="row mt-3">
+                    <!-- SMK TI GNC -->
                     <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                        <h6 class="text-uppercase fw-bold">SMK TI GNC.</h6>
+                        <h6 class="text-uppercase fw-bold">SMK TI GNC</h6>
                         <hr class="mb-4 mt-0 d-inline-block mx-auto"
                             style="width: 60px; background-color: #7c4dff; height: 2px" />
-                        <p>
+                        <p style="text-align: left;">
                             SMK-TI Garuda Nusantara merupakan salah satu sekolah terbesar di Kota Cimahi. Menjuarai berbagai
                             event baik tingkat Kota, Provinsi maupun Nasional. Setiap tahun menerima lebih dari 600 siswa
-                            baru.
-                            Dan telah meluluskan ribuan siswa sejak berdiri tahun 2009.
+                            baru. Dan telah meluluskan ribuan siswa sejak berdiri tahun 2009.
                         </p>
                     </div>
+
+                    <!-- Tentang Kami -->
                     <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                        <!-- Links -->
-                        <h6 class="text-uppercase fw-bold">Products</h6>
+                        <h6 class="text-uppercase fw-bold">Tentang Kami</h6>
                         <hr class="mb-4 mt-0 d-inline-block mx-auto"
                             style="width: 60px; background-color: #7c4dff; height: 2px" />
-                        <p>
-                            <a href="#!" class="text-white">MDBootstrap</a>
+                        <p style="text-align: left;">
+                            <a href="#!" class="text-white">Pusat Bantuan</a>
                         </p>
-                        <p>
-                            <a href="#!" class="text-white">MDWordPress</a>
+                        <p style="text-align: left;">
+                            <a href="#!" class="text-white">Logo</a>
                         </p>
-                        <p>
-                            <a href="#!" class="text-white">BrandFlow</a>
+                        <p style="text-align: left;">
+                            <a href="#!" class="text-white">Kebijakan Privasi</a>
                         </p>
-                        <p>
-                            <a href="#!" class="text-white">Bootstrap Angular</a>
+                        <p style="text-align: left;">
+                            <a href="#!" class="text-white">Kondisi dan Ketentuan</a>
                         </p>
                     </div>
+
+                    <!-- Pencari Kerja -->
                     <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                        <h6 class="text-uppercase fw-bold">Useful links</h6>
+                        <h6 class="text-uppercase fw-bold">Pencari Kerja</h6>
                         <hr class="mb-4 mt-0 d-inline-block mx-auto"
                             style="width: 60px; background-color: #7c4dff; height: 2px" />
-                        <p>
-                            Photo by <a href="#">Marvin
-                                Meyer</a> on <a href="#">Unsplash</a>
+                        <p style="text-align: left;">
+                            <a href="#!" class="text-white">Registrasi Pencari Kerja</a>
+                        </p>
+                        <p style="text-align: left;">
+                            <a href="#!" class="text-white">Buat Resume Online</a>
+                        </p>
+                        <p style="text-align: left;">
+                            <a href="#!" class="text-white">Cari Lowongan Kerja</a>
+                        </p>
+                        <p style="text-align: left;">
+                            <a href="#!" class="text-white">Job Alerts</a>
                         </p>
                     </div>
+
+                    <!-- Contact -->
                     <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                         <h6 class="text-uppercase fw-bold">Contact</h6>
                         <hr class="mb-4 mt-0 d-inline-block mx-auto"
                             style="width: 60px; background-color: #7c4dff; height: 2px" />
-                        <p><i class="fas fa-home mr-3"></i> Jl. Sangkuriang No.30, Cipageran, Kec. Cimahi Utara, Kota
-                            Cimahi, Jawa Barat 40511</p>
-                        <p><i class="fas fa-envelope mr-3"></i> informasi@smktignc.sch.id</p>
-                        <p><i class="fas fa-phone mr-3"></i> +62 821 1900 6081</p>
-                        <p><i class="fas fa-print mr-3"></i> +62 877 2315 7313</p>
+                        <p style="text-align: left;">
+                            Jl. Sangkuriang No.30, Cipageran, Kec. Cimahi Utara, Kota
+                            Cimahi, Jawa Barat 40511
+                        </p>
+                        <p style="text-align: left;">
+                            informasi@smktignc.sch.id
+                        </p>
+                        <p style="text-align: left;">
+                            +62 821 1900 6081
+                        </p>
+                        <p style="text-align: left;">
+                            +62 877 2315 7313
+                        </p>
                     </div>
                 </div>
             </div>

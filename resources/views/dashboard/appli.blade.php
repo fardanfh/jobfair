@@ -1,7 +1,7 @@
 @extends('dashboard.layout')
 
 @section('content')
-    @if (auth()->user()->level == 'perusahaan' || auth()->user()->level == 'superadmin')
+    @if (auth()->user()->level == 'admin')
         <h3>Kandidat <span class="text-muted">(2)</span></h3>
         <section class="mt-5">
             <div class="row">
