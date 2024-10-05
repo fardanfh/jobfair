@@ -229,198 +229,75 @@
         <h2 class="text-center mt-5">Lowongan Kerja</h2>
 
         <div class="row mt-5">
-            <div class="col-md-4 mb-3">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="company d-flex align-items-center">
-                            <div class="company-image border rounded overflow-hidden">
-                                <img src="https://static.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/p1/1042/2024/02/17/PT-Indofood-Sukses-Makmur-Tbk-2430014277.jpg"
-                                    alt="" width="100" height="100">
+            @foreach ($jobPostings as $data)
+                <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="company d-flex align-items-center">
+                                <div class="company-image border rounded overflow-hidden">
+                                    <img src="{{ asset('storage/' . $data->profile_image) }}"
+                                        alt="" width="100" height="100">
+                                </div>
+                                <div class="company-title ms-2">
+                                    <p class="m-0"><p class="m-0 text-muted">{{ $data->name }}</p></p>
+                                    <p class="m-0 text-muted">
+                                        {{ \Carbon\Carbon::parse($data->dibuat)->diffForHumans() }}
+                                    </p>
+
+                                </div>
                             </div>
-                            <div class="company-title ms-2">
-                                <p class="m-0">PT. Indofood</p>
-                                <p class="m-0 text-muted">2 hari yang lalu</p>
+
+                            <div class="mt-3">
+                                <p class="m-0 job-position">{{ $data->jabatan }}</p>
+                                <p class="m-0 text-muted">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                        fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
+                                    </svg>
+                                    {{ $data->lokasi }}
+                                </p>
                             </div>
-                        </div>
 
-                        <div class="mt-3">
-                            <p class="m-0 job-position">Junior Programmer</p>
-                            <p class="m-0 text-muted">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                    fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
-                                </svg>
-                                Kota Bandung
-                            </p>
-                        </div>
+                            <div class="mt-3">
+                                <span class="badge text-bg-secondary">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                        fill="currentColor" class="bi bi-cash" viewBox="0 0 16 16">
+                                        <path d="M8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4" />
+                                        <path
+                                            d="M0 4a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V6a2 2 0 0 1-2-2z" />
+                                    </svg>
+                                    {{ $data->gaji }}
+                                </span>
+                                <span class="badge text-bg-secondary">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                        fill="currentColor" class="bi bi-briefcase-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5" />
+                                        <path
+                                            d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85z" />
+                                    </svg>
+                                    {{ $data->tipe_pekerjaan }}
+                                </span>
+                                <span class="badge text-bg-secondary">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                        fill="currentColor" class="bi bi-mortarboard-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917z" />
+                                        <path
+                                            d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466z" />
+                                    </svg>
+                                    SMA/SMK/S1
+                                </span>
+                            </div>
 
-                        <div class="mt-3">
-                            <span class="badge text-bg-secondary">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                    fill="currentColor" class="bi bi-cash" viewBox="0 0 16 16">
-                                    <path d="M8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4" />
-                                    <path
-                                        d="M0 4a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V6a2 2 0 0 1-2-2z" />
-                                </svg>
-                                Negosiasi
-                            </span>
-                            <span class="badge text-bg-secondary">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                    fill="currentColor" class="bi bi-briefcase-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5" />
-                                    <path
-                                        d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85z" />
-                                </svg>
-                                Full Time
-                            </span>
-                            <span class="badge text-bg-secondary">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                    fill="currentColor" class="bi bi-mortarboard-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917z" />
-                                    <path
-                                        d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466z" />
-                                </svg>
-                                SMA/SMK/S1
-                            </span>
-                        </div>
-
-                        <div class="mt-3 d-flex justify-content-between">
-                            <a href="" class="btn btn-primary">Lihat Detail</a>
+                            <div class="mt-3 d-flex justify-content-between">
+                                <a href="{{ route('job-applies.show', $data->id) }}" class="btn btn-primary">Lihat Detail</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 mb-3">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="company d-flex align-items-center">
-                            <div class="company-image border rounded overflow-hidden">
-                                <img src="https://www.bca.co.id/-/media/Feature/Card/List-Card/Tentang-BCA/Brand-Assets/Logo-BCA/Logo-BCA_Biru.png"
-                                    alt="" width="100" height="100">
-                            </div>
-                            <div class="company-title ms-2">
-                                <p class="m-0">PT. BCA</p>
-                                <p class="m-0 text-muted">1 hari yang lalu</p>
-                            </div>
-                        </div>
-
-                        <div class="mt-3">
-                            <p class="m-0 job-position">Finance</p>
-                            <p class="m-0 text-muted">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                    fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
-                                </svg>
-                                Kota Bandung
-                            </p>
-                        </div>
-
-                        <div class="mt-3">
-                            <span class="badge text-bg-secondary">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                    fill="currentColor" class="bi bi-cash" viewBox="0 0 16 16">
-                                    <path d="M8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4" />
-                                    <path
-                                        d="M0 4a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V6a2 2 0 0 1-2-2z" />
-                                </svg>
-                                Negosiasi
-                            </span>
-                            <span class="badge text-bg-secondary">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                    fill="currentColor" class="bi bi-briefcase-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5" />
-                                    <path
-                                        d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85z" />
-                                </svg>
-                                Full Time
-                            </span>
-                            <span class="badge text-bg-secondary">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                    fill="currentColor" class="bi bi-mortarboard-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917z" />
-                                    <path
-                                        d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466z" />
-                                </svg>
-                                SMA/SMK/S1
-                            </span>
-                        </div>
-
-                        <div class="mt-3 d-flex justify-content-between">
-                            <a href="" class="btn btn-primary">Lihat Detail</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-3">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="company d-flex align-items-center">
-                            <div class="company-image border rounded overflow-hidden">
-                                <img src="https://static.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/p1/1042/2024/02/17/PT-Indofood-Sukses-Makmur-Tbk-2430014277.jpg"
-                                    alt="" width="100" height="100">
-                            </div>
-                            <div class="company-title ms-2">
-                                <p class="m-0">PT. Indofood</p>
-                                <p class="m-0 text-muted">2 hari yang lalu</p>
-                            </div>
-                        </div>
-
-                        <div class="mt-3">
-                            <p class="m-0 job-position">Junior Programmer</p>
-                            <p class="m-0 text-muted">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                    fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
-                                </svg>
-                                Kota Bandung
-                            </p>
-                        </div>
-
-                        <div class="mt-3">
-                            <span class="badge text-bg-secondary">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                    fill="currentColor" class="bi bi-cash" viewBox="0 0 16 16">
-                                    <path d="M8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4" />
-                                    <path
-                                        d="M0 4a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V6a2 2 0 0 1-2-2z" />
-                                </svg>
-                                Negosiasi
-                            </span>
-                            <span class="badge text-bg-secondary">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                    fill="currentColor" class="bi bi-briefcase-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5" />
-                                    <path
-                                        d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85z" />
-                                </svg>
-                                Full Time
-                            </span>
-                            <span class="badge text-bg-secondary">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                    fill="currentColor" class="bi bi-mortarboard-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917z" />
-                                    <path
-                                        d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466z" />
-                                </svg>
-                                SMA/SMK/S1
-                            </span>
-                        </div>
-
-                        <div class="mt-3 d-flex justify-content-between">
-                            <a href="" class="btn btn-primary">Lihat Detail</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
 
         <div class="d-flex justify-content-center mb-5">

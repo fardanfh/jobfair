@@ -26,18 +26,18 @@ class LoginController extends Controller
                 'name' => 'required',
                 'email' => 'required|email',
                 'password' => 'required|min:6',
-                // Tidak wajib memasukkan level
+                'level' => 'required'
             ])->validate();
 
-            // Set level default sebagai "pelamar" jika tidak ada level yang diinput
-            $level = $validatedData['level'] ?? 'pelamar';
+            // // Set level default sebagai "pelamar" jika tidak ada level yang diinput
+            // $level = $validatedData['level'] ?? 'pelamar';
 
             // Simpan data user baru
             User::create([
                 'name' => $validatedData['name'],
                 'email' => $validatedData['email'],
                 'password' => Hash::make($validatedData['password']),
-                'level' => $level,
+                'level' => $validatedData['level'],
                 'remember_token' => Str::random(60),
             ]);
 
@@ -93,7 +93,7 @@ class LoginController extends Controller
         $request->session()->regenerate();
 
         // Redirect to the homepage with a success message
-        return redirect('home')->with('success', 'Login Berhasil.');
+        return redirect('/')->with('success', 'Login Berhasil.');
     }
 
 

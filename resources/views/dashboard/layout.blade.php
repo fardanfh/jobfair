@@ -64,6 +64,7 @@
                 </div>
             </div>
         </div>
+
         {{-- sweet alert2 CDN --}}
         <script src="sweetalert2.all.min.js"></script>
         <script src="sweetalert2.min.js"></script>

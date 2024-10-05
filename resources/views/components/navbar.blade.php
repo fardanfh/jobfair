@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm sticky-top">
     <div class="container">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/">
             <img src="{{ asset('icon/logo.png') }}" alt="">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -18,16 +18,36 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Cari Lowongan</a>
                 </li>
+                @auth
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home">Dashboard</a>
+                    </li>
+                @endauth
+
                 <li class="nav-item">
                     {{-- <a class="nav-link" href="#">Tips Loker</a> --}}
                 </li>
             </ul>
-            <div class="d-flex">
-                <button class="btn btn-outline-success me-2" type="button" data-bs-toggle="modal"
-                    data-bs-target="#loginModal">Login</button>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                    data-bs-target="#registerModal">Register</button>
+            <div class="d-flex align-items-center justify-content-end">
+                @auth
+                    <!-- Show username and logout button if logged in -->
+                    <span class="me-3 fw-bold text-primary" style="font-size: 1.2rem;">👋 Hello, {{ auth()->user()->name }}</span>
+                    <a class="btn btn-danger d-flex align-items-center px-4 py-2 rounded-pill shadow-sm"
+                        href="{{ route('logout') }}" style="text-decoration: none; font-size: 1rem;">
+                        Logout
+                    </a>
+                @else
+                    <!-- Show login and register buttons if not logged in -->
+                    <button class="btn btn-outline-success me-2 px-4 py-2 rounded-pill fw-bold shadow-sm" type="button"
+                        data-bs-toggle="modal" data-bs-target="#loginModal" style="font-size: 1rem;">Login</button>
+                    <button type="button" class="btn btn-primary px-4 py-2 rounded-pill fw-bold shadow-sm" data-bs-toggle="modal"
+                        data-bs-target="#registerModal" style="font-size: 1rem;">Register</button>
+                @endauth
             </div>
+
+
+
+
         </div>
     </div>
 </nav>
@@ -126,14 +146,15 @@
                         <input name="password" type="password" class="form-control" id="password"
                             placeholder="Password" required>
                     </div>
-                    {{-- <div class="form-group">
+                    <div class="form-group">
                         <label for="level" class="font-weight-bold">Level <span
                                 class="text-danger">*</span></label>
                         <select name="level" class="form-control" id="level" required>
                             <option value="" disabled selected>Silakan Pilih Level</option>
                             <option value="pelamar">Pelamar</option>
+                            <option value="admin">Perusahaan</option>
                         </select>
-                    </div> --}}
+                    </div>
                     <button type="submit" class="btn btn-primary">Daftar</button>
                 </form>
 

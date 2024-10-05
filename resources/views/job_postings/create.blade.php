@@ -2,12 +2,15 @@
 
 @section('createjob')
     @if (auth()->user()->level == 'admin')
-        <form>
+        <form action="{{ route('job_postings.store') }}" method="POST">
+            @csrf
             <!-- Jabatan / Posisi Pekerjaan -->
+            <input type="hidden" name="id_user" value="{{ auth()->user()->id }}">
             <div class="form-group">
                 <label for="jabatan" class="font-weight-bold">Jabatan / Posisi Pekerjaan <span
                         class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="jabatan" name="jabatan" placeholder="Contoh : Staff Accounting" required>
+                <input type="text" class="form-control" id="jabatan" name="jabatan" placeholder="Contoh : Staff Accounting"
+                    required>
             </div>
 
             <!-- Deskripsi Pekerjaan -->
@@ -21,7 +24,7 @@
             <div class="form-group">
                 <label for="tanggungJawab" class="font-weight-bold">Tanggung Jawab Pekerjaan <span
                         class="text-danger">*</span></label>
-                <textarea class="form-control" id="tanggungJawab" class="tanggung_jawab" rows="3"
+                <textarea class="form-control" id="tanggungJawab" name="tanggung_jawab" rows="3"
                     placeholder="Contoh : Menyusun laporan keuangan, pelaporan pajak, Membuat invoice" required></textarea>
             </div>
 
@@ -75,7 +78,8 @@
                     <label class="form-check-label" for="1-2tahun">1-2 Tahun</label>
                 </div>
                 <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="3-5tahun" name="pengalaman[]" value="3-5 Tahun">
+                    <input type="checkbox" class="form-check-input" id="3-5tahun" name="pengalaman[]"
+                        value="3-5 Tahun">
                     <label class="form-check-label" for="3-5tahun">3-5 Tahun</label>
                 </div>
                 <div class="form-check">
@@ -237,7 +241,7 @@
             <div class="form-group">
                 <label for="tanggalBerakhir" class="font-weight-bold">Tanggal Berakhir Loker</label>
 
-                    <input type="date" class="form-control" id="tanggalBerakhir" name="tanggal_berakhir">
+                <input type="date" class="form-control" id="tanggalBerakhir" name="tanggal_berakhir">
 
             </div>
 
